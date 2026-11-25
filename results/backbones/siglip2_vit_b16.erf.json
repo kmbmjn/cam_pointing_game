@@ -1,0 +1,20 @@
+{
+  "model": "siglip2_vit_b16",
+  "checkpoint": "siglip2_vit_b16.pth",
+  "target_layer": "norm",
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002
+  },
+  "center_x": 118.60722395604328,
+  "center_y": 119.34536384321328,
+  "sigma_x": 28.099511173950255,
+  "sigma_y": 24.03035828944232,
+  "sigma": 26.064934731696287,
+  "r_squared": 0.6157838557038946
+}

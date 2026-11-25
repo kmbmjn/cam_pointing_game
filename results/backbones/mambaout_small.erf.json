@@ -1,0 +1,13 @@
+{
+  "model": "mambaout_small",
+  "checkpoint": "mambaout_small.pth",
+  "target_layer": "stages.2",
+  "split": "val",
+  "images": 2510,
+  "center_x": 116.75179192510008,
+  "center_y": 117.00995159380635,
+  "sigma_x": 33.91698137747104,
+  "sigma_y": 31.686669837027445,
+  "sigma": 32.80182560724924,
+  "r_squared": 0.7350862777527928
+}

@@ -1,0 +1,43 @@
+{
+  "model": "timm:fastvit_mci2.apple_mclip2_dfndr2b",
+  "checkpoint": "voc.pth",
+  "checkpoint_sha256": "0a471a7960d7b292d7018780274b48bab4b2da2bf978f93e8a26f035b39a2775",
+  "target_layer": "stages.2",
+  "input_size": [
+    256,
+    256
+  ],
+  "input": {
+    "size": [
+      256,
+      256
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "std": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002,
+    "timm": "1.0.22"
+  },
+  "center_x": 135.5459594561926,
+  "center_y": 134.38290441373394,
+  "sigma_x": 17.117033669832626,
+  "sigma_y": 15.947586254859274,
+  "sigma": 16.53230996234595,
+  "r_squared": 0.927581487105557
+}

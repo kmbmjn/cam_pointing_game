@@ -1,0 +1,3 @@
+include .gitignore checkpoints.sha256 CITATION.cff
+recursive-include assets *.png
+recursive-include results *.json

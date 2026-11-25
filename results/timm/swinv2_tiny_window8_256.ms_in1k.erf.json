@@ -1,0 +1,24 @@
+{
+  "model": "timm:swinv2_tiny_window8_256.ms_in1k",
+  "checkpoint": "voc.pth",
+  "target_layer": "layers.2",
+  "input_size": [
+    256,
+    256
+  ],
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002
+  },
+  "center_x": 137.5859257526468,
+  "center_y": 136.2650403727647,
+  "sigma_x": 15.577949010535923,
+  "sigma_y": 14.091876865555408,
+  "sigma": 14.834912938045665,
+  "r_squared": 0.7369968957043123
+}

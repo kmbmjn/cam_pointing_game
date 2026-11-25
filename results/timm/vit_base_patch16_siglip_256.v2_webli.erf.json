@@ -1,0 +1,24 @@
+{
+  "model": "timm:vit_base_patch16_siglip_256.v2_webli",
+  "checkpoint": "voc.pth",
+  "target_layer": "norm",
+  "input_size": [
+    256,
+    256
+  ],
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002
+  },
+  "center_x": 135.75032815234928,
+  "center_y": 135.41982893000042,
+  "sigma_x": 12.219310575157891,
+  "sigma_y": 12.165117008283843,
+  "sigma": 12.192213791720867,
+  "r_squared": 0.7855449543052193
+}

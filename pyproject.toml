@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extended-cam-pointing-game"
+version = "0.1.0"
+description = "Extended-CAM pointing game on PASCAL VOC 2007"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "opencv-python-headless>=4.8",
+    "Pillow>=10.1",
+    "scipy>=1.11",
+    "shapely>=2.0",
+    "torch>=2.4",
+    "torchvision>=0.19",
+]
+
+[project.optional-dependencies]
+timm = ["timm>=1.0.22,<2"]
+mobilenet = ["timm>=1.0.22,<2"]
+
+[project.scripts]
+cam-pointing-game = "cam_pointing_game.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cam_pointing_game*"]

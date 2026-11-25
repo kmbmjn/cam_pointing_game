@@ -1,0 +1,13 @@
+{
+  "model": "dinov3_convnext_tiny",
+  "checkpoint": "dinov3_convnext_tiny.pth",
+  "target_layer": "stages.2",
+  "split": "val",
+  "images": 2510,
+  "center_x": 118.80645225057647,
+  "center_y": 120.0977077851645,
+  "sigma_x": 19.022493824809946,
+  "sigma_y": 19.589303328022446,
+  "sigma": 19.305898576416197,
+  "r_squared": 0.8683809605223985
+}

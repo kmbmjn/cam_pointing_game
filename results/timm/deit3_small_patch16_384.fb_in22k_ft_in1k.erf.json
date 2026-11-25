@@ -1,0 +1,24 @@
+{
+  "model": "timm:deit3_small_patch16_384.fb_in22k_ft_in1k",
+  "checkpoint": "voc.pth",
+  "target_layer": "blocks.10",
+  "input_size": [
+    384,
+    384
+  ],
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002
+  },
+  "center_x": 199.4234729307971,
+  "center_y": 199.32882380406338,
+  "sigma_x": 11.559577407567348,
+  "sigma_y": 11.06252072619364,
+  "sigma": 11.311049066880493,
+  "r_squared": 0.7614836985331344
+}

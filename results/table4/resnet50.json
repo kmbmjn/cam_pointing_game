@@ -1,0 +1,908 @@
+{
+  "split": "test",
+  "images": 4952,
+  "box_source": "first-descendant",
+  "difficult_set": "all-boxes",
+  "radius_pixels": 15,
+  "scoring_size": [
+    224,
+    224
+  ],
+  "model": "resnet50",
+  "checkpoint": "resnet50.pth",
+  "checkpoint_sha256": "e749bfa59d69c2d44f157f24e6b238f690b1dae1713f2090da1b15ed14efa237",
+  "target_layer": "layer3",
+  "input": {
+    "size": [
+      224,
+      224
+    ],
+    "interpolation": "bilinear",
+    "mean": null,
+    "std": null
+  },
+  "sigma": 45.6683,
+  "erf_fit": null,
+  "gradcampp_formula": "archive",
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 16,
+    "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "python": "3.13.5",
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "opencv": "4.12.0",
+    "numpy": "2.1.3",
+    "pillow": "11.1.0",
+    "scipy": "1.15.3",
+    "shapely": "2.2.0"
+  },
+  "methods": {
+    "center": {
+      "all": {
+        "score_percent": 74.06522567450213,
+        "hits": 5525,
+        "misses": 2107,
+        "per_class": {
+          "aeroplane": {
+            "hits": 184,
+            "misses": 21,
+            "score_percent": 89.7560975609756
+          },
+          "bicycle": {
+            "hits": 183,
+            "misses": 67,
+            "score_percent": 73.2
+          },
+          "bird": {
+            "hits": 243,
+            "misses": 46,
+            "score_percent": 84.08304498269896
+          },
+          "boat": {
+            "hits": 139,
+            "misses": 37,
+            "score_percent": 78.97727272727273
+          },
+          "bottle": {
+            "hits": 83,
+            "misses": 157,
+            "score_percent": 34.583333333333336
+          },
+          "bus": {
+            "hits": 150,
+            "misses": 33,
+            "score_percent": 81.9672131147541
+          },
+          "car": {
+            "hits": 542,
+            "misses": 233,
+            "score_percent": 69.93548387096774
+          },
+          "cat": {
+            "hits": 294,
+            "misses": 38,
+            "score_percent": 88.55421686746988
+          },
+          "chair": {
+            "hits": 241,
+            "misses": 304,
+            "score_percent": 44.22018348623853
+          },
+          "cow": {
+            "hits": 103,
+            "misses": 24,
+            "score_percent": 81.10236220472441
+          },
+          "diningtable": {
+            "hits": 156,
+            "misses": 91,
+            "score_percent": 63.1578947368421
+          },
+          "dog": {
+            "hits": 372,
+            "misses": 61,
+            "score_percent": 85.91224018475751
+          },
+          "horse": {
+            "hits": 264,
+            "misses": 15,
+            "score_percent": 94.6236559139785
+          },
+          "motorbike": {
+            "hits": 193,
+            "misses": 40,
+            "score_percent": 82.83261802575107
+          },
+          "person": {
+            "hits": 1528,
+            "misses": 569,
+            "score_percent": 72.86599904625656
+          },
+          "pottedplant": {
+            "hits": 118,
+            "misses": 136,
+            "score_percent": 46.45669291338583
+          },
+          "sheep": {
+            "hits": 85,
+            "misses": 13,
+            "score_percent": 86.73469387755102
+          },
+          "sofa": {
+            "hits": 271,
+            "misses": 84,
+            "score_percent": 76.33802816901408
+          },
+          "train": {
+            "hits": 239,
+            "misses": 20,
+            "score_percent": 92.27799227799228
+          },
+          "tvmonitor": {
+            "hits": 137,
+            "misses": 118,
+            "score_percent": 53.72549019607843
+          }
+        }
+      },
+      "difficult": {
+        "score_percent": 44.331698876180035,
+        "hits": 354,
+        "misses": 493,
+        "per_class": {
+          "aeroplane": {
+            "hits": 3,
+            "misses": 1,
+            "score_percent": 75.0
+          },
+          "bicycle": {
+            "hits": 20,
+            "misses": 26,
+            "score_percent": 43.47826086956522
+          },
+          "bird": {
+            "hits": 3,
+            "misses": 9,
+            "score_percent": 25.0
+          },
+          "boat": {
+            "hits": 14,
+            "misses": 9,
+            "score_percent": 60.869565217391305
+          },
+          "bottle": {
+            "hits": 5,
+            "misses": 18,
+            "score_percent": 21.73913043478261
+          },
+          "bus": {
+            "hits": 16,
+            "misses": 19,
+            "score_percent": 45.714285714285715
+          },
+          "car": {
+            "hits": 38,
+            "misses": 59,
+            "score_percent": 39.175257731958766
+          },
+          "cat": {
+            "hits": 3,
+            "misses": 9,
+            "score_percent": 25.0
+          },
+          "chair": {
+            "hits": 27,
+            "misses": 60,
+            "score_percent": 31.03448275862069
+          },
+          "cow": {
+            "hits": 10,
+            "misses": 4,
+            "score_percent": 71.42857142857143
+          },
+          "diningtable": {
+            "hits": 4,
+            "misses": 8,
+            "score_percent": 33.333333333333336
+          },
+          "dog": {
+            "hits": 6,
+            "misses": 14,
+            "score_percent": 30.0
+          },
+          "horse": {
+            "hits": 20,
+            "misses": 6,
+            "score_percent": 76.92307692307692
+          },
+          "motorbike": {
+            "hits": 9,
+            "misses": 17,
+            "score_percent": 34.61538461538461
+          },
+          "person": {
+            "hits": 110,
+            "misses": 133,
+            "score_percent": 45.267489711934154
+          },
+          "pottedplant": {
+            "hits": 13,
+            "misses": 30,
+            "score_percent": 30.232558139534884
+          },
+          "sheep": {
+            "hits": 3,
+            "misses": 3,
+            "score_percent": 50.0
+          },
+          "sofa": {
+            "hits": 13,
+            "misses": 27,
+            "score_percent": 32.5
+          },
+          "train": {
+            "hits": 12,
+            "misses": 4,
+            "score_percent": 75.0
+          },
+          "tvmonitor": {
+            "hits": 25,
+            "misses": 37,
+            "score_percent": 40.32258064516129
+          }
+        }
+      }
+    },
+    "gradcam": {
+      "all": {
+        "score_percent": 74.16728589295442,
+        "hits": 5855,
+        "misses": 1777,
+        "per_class": {
+          "aeroplane": {
+            "hits": 131,
+            "misses": 74,
+            "score_percent": 63.90243902439025
+          },
+          "bicycle": {
+            "hits": 213,
+            "misses": 37,
+            "score_percent": 85.2
+          },
+          "bird": {
+            "hits": 213,
+            "misses": 76,
+            "score_percent": 73.70242214532873
+          },
+          "boat": {
+            "hits": 91,
+            "misses": 85,
+            "score_percent": 51.70454545454545
+          },
+          "bottle": {
+            "hits": 126,
+            "misses": 114,
+            "score_percent": 52.5
+          },
+          "bus": {
+            "hits": 133,
+            "misses": 50,
+            "score_percent": 72.6775956284153
+          },
+          "car": {
+            "hits": 587,
+            "misses": 188,
+            "score_percent": 75.74193548387096
+          },
+          "cat": {
+            "hits": 249,
+            "misses": 83,
+            "score_percent": 75.0
+          },
+          "chair": {
+            "hits": 299,
+            "misses": 246,
+            "score_percent": 54.862385321100916
+          },
+          "cow": {
+            "hits": 112,
+            "misses": 15,
+            "score_percent": 88.18897637795276
+          },
+          "diningtable": {
+            "hits": 187,
+            "misses": 60,
+            "score_percent": 75.7085020242915
+          },
+          "dog": {
+            "hits": 354,
+            "misses": 79,
+            "score_percent": 81.75519630484989
+          },
+          "horse": {
+            "hits": 242,
+            "misses": 37,
+            "score_percent": 86.73835125448029
+          },
+          "motorbike": {
+            "hits": 201,
+            "misses": 32,
+            "score_percent": 86.26609442060087
+          },
+          "person": {
+            "hits": 1823,
+            "misses": 274,
+            "score_percent": 86.93371483071054
+          },
+          "pottedplant": {
+            "hits": 188,
+            "misses": 66,
+            "score_percent": 74.01574803149606
+          },
+          "sheep": {
+            "hits": 86,
+            "misses": 12,
+            "score_percent": 87.75510204081633
+          },
+          "sofa": {
+            "hits": 284,
+            "misses": 71,
+            "score_percent": 80.0
+          },
+          "train": {
+            "hits": 177,
+            "misses": 82,
+            "score_percent": 68.33976833976834
+          },
+          "tvmonitor": {
+            "hits": 159,
+            "misses": 96,
+            "score_percent": 62.35294117647059
+          }
+        }
+      },
+      "difficult": {
+        "score_percent": 55.57020718021185,
+        "hits": 509,
+        "misses": 338,
+        "per_class": {
+          "aeroplane": {
+            "hits": 1,
+            "misses": 3,
+            "score_percent": 25.0
+          },
+          "bicycle": {
+            "hits": 31,
+            "misses": 15,
+            "score_percent": 67.3913043478261
+          },
+          "bird": {
+            "hits": 5,
+            "misses": 7,
+            "score_percent": 41.666666666666664
+          },
+          "boat": {
+            "hits": 7,
+            "misses": 16,
+            "score_percent": 30.434782608695652
+          },
+          "bottle": {
+            "hits": 6,
+            "misses": 17,
+            "score_percent": 26.08695652173913
+          },
+          "bus": {
+            "hits": 16,
+            "misses": 19,
+            "score_percent": 45.714285714285715
+          },
+          "car": {
+            "hits": 55,
+            "misses": 42,
+            "score_percent": 56.70103092783505
+          },
+          "cat": {
+            "hits": 3,
+            "misses": 9,
+            "score_percent": 25.0
+          },
+          "chair": {
+            "hits": 45,
+            "misses": 42,
+            "score_percent": 51.724137931034484
+          },
+          "cow": {
+            "hits": 12,
+            "misses": 2,
+            "score_percent": 85.71428571428571
+          },
+          "diningtable": {
+            "hits": 8,
+            "misses": 4,
+            "score_percent": 66.66666666666667
+          },
+          "dog": {
+            "hits": 12,
+            "misses": 8,
+            "score_percent": 60.0
+          },
+          "horse": {
+            "hits": 20,
+            "misses": 6,
+            "score_percent": 76.92307692307692
+          },
+          "motorbike": {
+            "hits": 14,
+            "misses": 12,
+            "score_percent": 53.84615384615385
+          },
+          "person": {
+            "hits": 174,
+            "misses": 69,
+            "score_percent": 71.60493827160494
+          },
+          "pottedplant": {
+            "hits": 25,
+            "misses": 18,
+            "score_percent": 58.13953488372093
+          },
+          "sheep": {
+            "hits": 6,
+            "misses": 0,
+            "score_percent": 100.0
+          },
+          "sofa": {
+            "hits": 23,
+            "misses": 17,
+            "score_percent": 57.5
+          },
+          "train": {
+            "hits": 8,
+            "misses": 8,
+            "score_percent": 50.0
+          },
+          "tvmonitor": {
+            "hits": 38,
+            "misses": 24,
+            "score_percent": 61.29032258064516
+          }
+        }
+      }
+    },
+    "gradcampp": {
+      "all": {
+        "score_percent": 46.425273839445005,
+        "hits": 3622,
+        "misses": 4010,
+        "per_class": {
+          "aeroplane": {
+            "hits": 68,
+            "misses": 137,
+            "score_percent": 33.170731707317074
+          },
+          "bicycle": {
+            "hits": 113,
+            "misses": 137,
+            "score_percent": 45.2
+          },
+          "bird": {
+            "hits": 154,
+            "misses": 135,
+            "score_percent": 53.28719723183391
+          },
+          "boat": {
+            "hits": 65,
+            "misses": 111,
+            "score_percent": 36.93181818181818
+          },
+          "bottle": {
+            "hits": 70,
+            "misses": 170,
+            "score_percent": 29.166666666666668
+          },
+          "bus": {
+            "hits": 87,
+            "misses": 96,
+            "score_percent": 47.540983606557376
+          },
+          "car": {
+            "hits": 404,
+            "misses": 371,
+            "score_percent": 52.12903225806452
+          },
+          "cat": {
+            "hits": 195,
+            "misses": 137,
+            "score_percent": 58.734939759036145
+          },
+          "chair": {
+            "hits": 171,
+            "misses": 374,
+            "score_percent": 31.376146788990827
+          },
+          "cow": {
+            "hits": 66,
+            "misses": 61,
+            "score_percent": 51.968503937007874
+          },
+          "diningtable": {
+            "hits": 115,
+            "misses": 132,
+            "score_percent": 46.558704453441294
+          },
+          "dog": {
+            "hits": 256,
+            "misses": 177,
+            "score_percent": 59.122401847575055
+          },
+          "horse": {
+            "hits": 160,
+            "misses": 119,
+            "score_percent": 57.34767025089606
+          },
+          "motorbike": {
+            "hits": 140,
+            "misses": 93,
+            "score_percent": 60.08583690987125
+          },
+          "person": {
+            "hits": 1057,
+            "misses": 1040,
+            "score_percent": 50.40534096328088
+          },
+          "pottedplant": {
+            "hits": 84,
+            "misses": 170,
+            "score_percent": 33.07086614173228
+          },
+          "sheep": {
+            "hits": 61,
+            "misses": 37,
+            "score_percent": 62.244897959183675
+          },
+          "sofa": {
+            "hits": 169,
+            "misses": 186,
+            "score_percent": 47.605633802816904
+          },
+          "train": {
+            "hits": 128,
+            "misses": 131,
+            "score_percent": 49.42084942084942
+          },
+          "tvmonitor": {
+            "hits": 59,
+            "misses": 196,
+            "score_percent": 23.137254901960784
+          }
+        }
+      },
+      "difficult": {
+        "score_percent": 23.94900497723166,
+        "hits": 194,
+        "misses": 653,
+        "per_class": {
+          "aeroplane": {
+            "hits": 0,
+            "misses": 4,
+            "score_percent": 0.0
+          },
+          "bicycle": {
+            "hits": 13,
+            "misses": 33,
+            "score_percent": 28.26086956521739
+          },
+          "bird": {
+            "hits": 3,
+            "misses": 9,
+            "score_percent": 25.0
+          },
+          "boat": {
+            "hits": 8,
+            "misses": 15,
+            "score_percent": 34.78260869565217
+          },
+          "bottle": {
+            "hits": 0,
+            "misses": 23,
+            "score_percent": 0.0
+          },
+          "bus": {
+            "hits": 7,
+            "misses": 28,
+            "score_percent": 20.0
+          },
+          "car": {
+            "hits": 28,
+            "misses": 69,
+            "score_percent": 28.8659793814433
+          },
+          "cat": {
+            "hits": 2,
+            "misses": 10,
+            "score_percent": 16.666666666666668
+          },
+          "chair": {
+            "hits": 17,
+            "misses": 70,
+            "score_percent": 19.54022988505747
+          },
+          "cow": {
+            "hits": 6,
+            "misses": 8,
+            "score_percent": 42.857142857142854
+          },
+          "diningtable": {
+            "hits": 1,
+            "misses": 11,
+            "score_percent": 8.333333333333334
+          },
+          "dog": {
+            "hits": 6,
+            "misses": 14,
+            "score_percent": 30.0
+          },
+          "horse": {
+            "hits": 8,
+            "misses": 18,
+            "score_percent": 30.76923076923077
+          },
+          "motorbike": {
+            "hits": 8,
+            "misses": 18,
+            "score_percent": 30.76923076923077
+          },
+          "person": {
+            "hits": 55,
+            "misses": 188,
+            "score_percent": 22.633744855967077
+          },
+          "pottedplant": {
+            "hits": 12,
+            "misses": 31,
+            "score_percent": 27.906976744186046
+          },
+          "sheep": {
+            "hits": 4,
+            "misses": 2,
+            "score_percent": 66.66666666666667
+          },
+          "sofa": {
+            "hits": 7,
+            "misses": 33,
+            "score_percent": 17.5
+          },
+          "train": {
+            "hits": 3,
+            "misses": 13,
+            "score_percent": 18.75
+          },
+          "tvmonitor": {
+            "hits": 6,
+            "misses": 56,
+            "score_percent": 9.67741935483871
+          }
+        }
+      }
+    },
+    "extendedcam": {
+      "all": {
+        "score_percent": 88.62729191176365,
+        "hits": 6706,
+        "misses": 926,
+        "per_class": {
+          "aeroplane": {
+            "hits": 196,
+            "misses": 9,
+            "score_percent": 95.60975609756098
+          },
+          "bicycle": {
+            "hits": 235,
+            "misses": 15,
+            "score_percent": 94.0
+          },
+          "bird": {
+            "hits": 262,
+            "misses": 27,
+            "score_percent": 90.65743944636678
+          },
+          "boat": {
+            "hits": 139,
+            "misses": 37,
+            "score_percent": 78.97727272727273
+          },
+          "bottle": {
+            "hits": 148,
+            "misses": 92,
+            "score_percent": 61.666666666666664
+          },
+          "bus": {
+            "hits": 168,
+            "misses": 15,
+            "score_percent": 91.80327868852459
+          },
+          "car": {
+            "hits": 670,
+            "misses": 105,
+            "score_percent": 86.45161290322581
+          },
+          "cat": {
+            "hits": 321,
+            "misses": 11,
+            "score_percent": 96.6867469879518
+          },
+          "chair": {
+            "hits": 381,
+            "misses": 164,
+            "score_percent": 69.90825688073394
+          },
+          "cow": {
+            "hits": 123,
+            "misses": 4,
+            "score_percent": 96.85039370078741
+          },
+          "diningtable": {
+            "hits": 229,
+            "misses": 18,
+            "score_percent": 92.71255060728745
+          },
+          "dog": {
+            "hits": 419,
+            "misses": 14,
+            "score_percent": 96.76674364896074
+          },
+          "horse": {
+            "hits": 271,
+            "misses": 8,
+            "score_percent": 97.1326164874552
+          },
+          "motorbike": {
+            "hits": 224,
+            "misses": 9,
+            "score_percent": 96.13733905579399
+          },
+          "person": {
+            "hits": 1869,
+            "misses": 228,
+            "score_percent": 89.12732474964234
+          },
+          "pottedplant": {
+            "hits": 207,
+            "misses": 47,
+            "score_percent": 81.49606299212599
+          },
+          "sheep": {
+            "hits": 98,
+            "misses": 0,
+            "score_percent": 100.0
+          },
+          "sofa": {
+            "hits": 313,
+            "misses": 42,
+            "score_percent": 88.16901408450704
+          },
+          "train": {
+            "hits": 233,
+            "misses": 26,
+            "score_percent": 89.96138996138995
+          },
+          "tvmonitor": {
+            "hits": 200,
+            "misses": 55,
+            "score_percent": 78.43137254901961
+          }
+        }
+      },
+      "difficult": {
+        "score_percent": 69.60065099795474,
+        "hits": 598,
+        "misses": 249,
+        "per_class": {
+          "aeroplane": {
+            "hits": 2,
+            "misses": 2,
+            "score_percent": 50.0
+          },
+          "bicycle": {
+            "hits": 39,
+            "misses": 7,
+            "score_percent": 84.78260869565217
+          },
+          "bird": {
+            "hits": 5,
+            "misses": 7,
+            "score_percent": 41.666666666666664
+          },
+          "boat": {
+            "hits": 14,
+            "misses": 9,
+            "score_percent": 60.869565217391305
+          },
+          "bottle": {
+            "hits": 6,
+            "misses": 17,
+            "score_percent": 26.08695652173913
+          },
+          "bus": {
+            "hits": 23,
+            "misses": 12,
+            "score_percent": 65.71428571428571
+          },
+          "car": {
+            "hits": 67,
+            "misses": 30,
+            "score_percent": 69.0721649484536
+          },
+          "cat": {
+            "hits": 8,
+            "misses": 4,
+            "score_percent": 66.66666666666667
+          },
+          "chair": {
+            "hits": 56,
+            "misses": 31,
+            "score_percent": 64.36781609195403
+          },
+          "cow": {
+            "hits": 13,
+            "misses": 1,
+            "score_percent": 92.85714285714286
+          },
+          "diningtable": {
+            "hits": 9,
+            "misses": 3,
+            "score_percent": 75.0
+          },
+          "dog": {
+            "hits": 15,
+            "misses": 5,
+            "score_percent": 75.0
+          },
+          "horse": {
+            "hits": 23,
+            "misses": 3,
+            "score_percent": 88.46153846153847
+          },
+          "motorbike": {
+            "hits": 20,
+            "misses": 6,
+            "score_percent": 76.92307692307692
+          },
+          "person": {
+            "hits": 182,
+            "misses": 61,
+            "score_percent": 74.89711934156378
+          },
+          "pottedplant": {
+            "hits": 33,
+            "misses": 10,
+            "score_percent": 76.74418604651163
+          },
+          "sheep": {
+            "hits": 6,
+            "misses": 0,
+            "score_percent": 100.0
+          },
+          "sofa": {
+            "hits": 26,
+            "misses": 14,
+            "score_percent": 65.0
+          },
+          "train": {
+            "hits": 12,
+            "misses": 4,
+            "score_percent": 75.0
+          },
+          "tvmonitor": {
+            "hits": 39,
+            "misses": 23,
+            "score_percent": 62.903225806451616
+          }
+        }
+      }
+    }
+  }
+}

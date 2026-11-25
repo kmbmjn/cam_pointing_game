@@ -1,0 +1,23 @@
+{
+  "model": "resnet18",
+  "checkpoint": "resnet18.pth",
+  "checkpoint_sha256": "1356b663fe4531e1f8e76b5cfb4294daed2f245276949cc7ef6c29c546fba407",
+  "split": "val",
+  "images": 2510,
+  "bce": 0.10043366435039566,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 32,
+    "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "python": "3.13.5",
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "opencv": "4.12.0",
+    "numpy": "2.1.3",
+    "pillow": "11.1.0",
+    "scipy": "1.15.3",
+    "shapely": "2.2.0"
+  }
+}

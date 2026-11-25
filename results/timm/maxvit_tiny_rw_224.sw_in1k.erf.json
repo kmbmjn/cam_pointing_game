@@ -1,0 +1,43 @@
+{
+  "model": "timm:maxvit_tiny_rw_224.sw_in1k",
+  "checkpoint": "voc.pth",
+  "checkpoint_sha256": "359a3f9ad488fc458e8309a11b667d966ce55a8ae01949485bbb0720d289d8c7",
+  "target_layer": "stages.2",
+  "input_size": [
+    224,
+    224
+  ],
+  "input": {
+    "size": [
+      224,
+      224
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ]
+  },
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002,
+    "timm": "1.0.22"
+  },
+  "center_x": 122.40872294554359,
+  "center_y": 120.00478509244523,
+  "sigma_x": 38.075282450291894,
+  "sigma_y": 28.92780839501898,
+  "sigma": 33.50154542265544,
+  "r_squared": 0.5440123704398241
+}

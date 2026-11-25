@@ -1,0 +1,42 @@
+{
+  "model": "resnet101",
+  "checkpoint": "resnet101.pth",
+  "checkpoint_sha256": "cc347223a8d4529212c1f4600faaeb636918cf6fb47f782091acd2f4b99f5ec2",
+  "target_layer": "layer3",
+  "input_size": [
+    224,
+    224
+  ],
+  "input": {
+    "size": [
+      224,
+      224
+    ],
+    "interpolation": "bilinear",
+    "mean": null,
+    "std": null
+  },
+  "split": "test",
+  "images": 4952,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "python": "3.13.5",
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cuda": "12.8",
+    "cudnn": 91002,
+    "opencv": "4.12.0",
+    "numpy": "2.1.3",
+    "pillow": "11.1.0",
+    "scipy": "1.15.3",
+    "shapely": "2.2.0"
+  },
+  "center_x": 115.56251392643512,
+  "center_y": 108.45941652356102,
+  "sigma_x": 62.7871163702704,
+  "sigma_y": 69.24777360834544,
+  "sigma": 66.01744498930792,
+  "r_squared": 0.6139999959049738
+}

@@ -1,0 +1,20 @@
+{
+  "model": "mambaout_base",
+  "checkpoint": "mambaout_base.pth",
+  "target_layer": "stages.2",
+  "split": "val",
+  "images": 2510,
+  "runtime": {
+    "device": "cuda",
+    "batch_size": 8,
+    "torch": "2.9.1+cu128",
+    "torchvision": "0.24.1+cu128",
+    "cudnn": 91002
+  },
+  "center_x": 115.37643750104885,
+  "center_y": 116.62058572704734,
+  "sigma_x": 38.171477914196174,
+  "sigma_y": 34.72226450143827,
+  "sigma": 36.446871207817225,
+  "r_squared": 0.7410727246394049
+}

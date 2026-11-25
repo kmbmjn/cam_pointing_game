@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the Extended-CAM paper when using this implementation."
+title: Extended-CAM Pointing Game
+type: software
+version: 0.1.0
+authors:
+  - family-names: Kim
+    given-names: Bum Jun
+preferred-citation:
+  type: article
+  title: Extending class activation mapping using Gaussian receptive field
+  authors:
+    - family-names: Kim
+      given-names: Bum Jun
+    - family-names: Koo
+      given-names: Gyogwon
+    - family-names: Choi
+      given-names: Hyeyeon
+    - family-names: Kim
+      given-names: Sang Woo
+  journal: Computer Vision and Image Understanding
+  volume: 231
+  year: 2023
+  doi: 10.1016/j.cviu.2023.103663
