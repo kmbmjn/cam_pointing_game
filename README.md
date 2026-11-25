@@ -2,7 +2,7 @@
 
 Official PyTorch code for the PASCAL VOC 2007 pointing game from the Extended-CAM paper. Compare Center, Grad-CAM, Grad-CAM++, and Extended-CAM on ResNets and timm models. [Paper](https://doi.org/10.1016/j.cviu.2023.103663)
 
-[Quick start](#quick-start) · [Scoring](#pointing-game-protocol) · [Table 4 results](#table-4-results) · [ViT and timm](#vit-and-timm-models) · [Examples](#pointing-game-examples) · [Citation](#citation)
+[Quick start](#quick-start) · [Checkpoints](#use-the-original-checkpoints) · [Scoring](#pointing-game-protocol) · [Table 4 results](#table-4-results) · [ViT and timm](#vit-and-timm-models) · [Examples](#pointing-game-examples) · [Citation](#citation)
 
 ## Quick start
 
@@ -12,12 +12,11 @@ Use Python 3.10 or later. For GPU runs, install the PyTorch and torchvision whee
 python -m pip install -e .
 ```
 
-Extract VOC 2007 test under `data/`. Add the train/validation archive to the same directory to train a model or fit its receptive field on validation images. [VOC 2007 downloads](https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2007/)
+Extract the VOC 2007 test archive under `data/`. [VOC 2007 downloads](https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2007/)
 
 ```bash
 mkdir -p data
 tar -xf VOCtest_06-Nov-2007.tar -C data
-tar -xf VOCtrainval_06-Nov-2007.tar -C data
 ```
 
 Run Center first. It uses the test annotations alone.
@@ -27,9 +26,25 @@ voc=data/VOCdevkit/VOC2007
 cam-pointing-game evaluate --voc-root "$voc" --method center
 ```
 
-Then train a classifier and use its checkpoint to compare all four methods.
+### Use the original checkpoints
+
+Save the archive (1.30 GiB) in the repository root. It contains all six original Table 4 checkpoints. [Download `table4-checkpoints.tar`](https://github.com/kmbmjn/cam_pointing_game/releases/download/v0.1.0/table4-checkpoints.tar)
 
 ```bash
+tar -xf table4-checkpoints.tar
+(cd checkpoints && sha256sum -c ../checkpoints.sha256)
+cam-pointing-game evaluate --voc-root "$voc" --model resnet18 \
+  --checkpoint checkpoints/resnet18.pth --output runs/resnet18-table4.json
+```
+
+This compares all four methods on the test split. The evaluator uses the published σ for these weights.
+
+### Train your own checkpoint
+
+Extract the VOC 2007 train/validation archive into the same `data/` directory.
+
+```bash
+tar -xf VOCtrainval_06-Nov-2007.tar -C data
 cam-pointing-game train --voc-root "$voc" --model resnet18 --output runs/resnet18.pth
 cam-pointing-game evaluate --voc-root "$voc" --model resnet18 \
   --checkpoint runs/resnet18.pth --output runs/resnet18.json
@@ -37,11 +52,11 @@ cam-pointing-game evaluate --voc-root "$voc" --model resnet18 \
 
 `train` fine-tunes an ImageNet model on VOC `train` and saves the epoch with the lowest binary cross-entropy (BCE) on VOC `val`. ResNet-18 trains for 200 epochs by default. Use the BCE values below as a training reference, then run the pointing game to measure localization.
 
-`evaluate` fits Extended-CAM's Gaussian width (σ) on VOC `val` for a new checkpoint. It uses the published σ for the original Table 4 weights. For a quick check on a new checkpoint, add `--limit 32 --erf-limit 32`.
+`evaluate` fits Extended-CAM's Gaussian width (σ) on VOC `val` for a new checkpoint. For a quick check, add `--limit 32 --erf-limit 32`.
 
 ### One-line CAMs
 
-Pass an evaluation-mode model, an RGB tensor of shape `(N, 3, H, W)` with values in `[0, 255]`, and the class ID. The example uses the ResNet-18 checkpoint from the quick start.
+Pass an evaluation-mode model, an RGB tensor of shape `(N, 3, H, W)` with values in `[0, 255]`, and the class ID. This example uses the original ResNet-18 checkpoint and fits σ on VOC `val`. Extract the train/validation archive as shown above.
 
 ```python
 from pathlib import Path
@@ -54,7 +69,7 @@ from cam_pointing_game.voc import CLASS_INDEX, VOCImages, make_loader, read_anno
 
 voc = Path("data/VOCdevkit/VOC2007")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model = load_model("resnet18", Path("runs/resnet18.pth"), device)
+model = load_model("resnet18", Path("checkpoints/resnet18.pth"), device)
 cat_image = read_annotation(voc / "Annotations/000049.xml")
 image, _ = VOCImages(voc, [cat_image])[0]
 images = image.unsqueeze(0)
@@ -93,8 +108,6 @@ We reran the six original checkpoints on all 4,952 VOC 2007 test images. Extende
 | `resnext101_32x8d` | 0.072140 | 77.93 / 60.82 | 36.15 / 18.66 | **90.83 / 75.53** |
 
 Grad-CAM and Extended-CAM are within 0.02 and 0.06 percentage points of the paper, respectively. The largest difference for the archived Grad-CAM++ formula is 4.09 points on WideResNet-101-2 Difficult. The full reports include per-class counts, validation losses, and ERF fits. [Paper](https://doi.org/10.1016/j.cviu.2023.103663) · [Table 4 reports](results/table4/)
-
-If you have the original `table4-checkpoints.tar` bundle, extract it in the repository root and pass `--checkpoint checkpoints/<model>.pth` to `evaluate`. [Checkpoint checksums](checkpoints.sha256)
 
 ## ViT and timm models
 
@@ -140,11 +153,11 @@ Green boxes mark the chosen class. The yellow circle is used for scoring. A whit
 
 **Car, VOC `001376`.** ViT-Dpwee's Extended-CAM points to the distant car on the right.
 
-Draw the cat example with your checkpoint.
+Draw the cat example with the original ResNet-18 checkpoint.
 
 ```bash
 cam-pointing-game visualize --voc-root "$voc" --model resnet18 \
-  --checkpoint runs/resnet18.pth --image-id 000049 --category cat --output runs/cat.png
+  --checkpoint checkpoints/resnet18.pth --image-id 000049 --category cat --output runs/cat.png
 ```
 
 ## Citation
